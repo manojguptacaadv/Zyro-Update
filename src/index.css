@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+}
+
+@layer utilities {
+  /* Safe area padding for Android status bar and navigation pill */
+  .safe-top {
+    padding-top: max(env(safe-area-inset-top, 0px), 0px);
+  }
+  .safe-bottom {
+    padding-bottom: max(env(safe-area-inset-bottom, 0px), 0px);
+  }
+  .safe-left {
+    padding-left: env(safe-area-inset-left, 0px);
+  }
+  .safe-right {
+    padding-right: env(safe-area-inset-right, 0px);
+  }
+
+  /* Smooth mobile touch scrolling */
+  .touch-scroll {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: auto;
+    scroll-behavior: smooth;
+  }
+
+  /* Hide scrollbar for mobile clean look while preserving full scrollability */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Prevent unwanted mobile text selection during fast taps */
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: #020617;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+#root {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  user-select: auto;
+  -webkit-user-select: auto;
+}

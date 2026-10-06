@@ -1,0 +1,10 @@
+{
+  "name": "WorkRide - Job & Vehicle Rental Platform",
+  "description": "All-in-one mobile app for renting vehicles (EV scooters, bikes, e-rickshaws, cars) on daily/weekly/monthly plans with live GPS tracking, paired with gig work and delivery job opportunities.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

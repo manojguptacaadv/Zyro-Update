@@ -1,0 +1,36 @@
+import type { CapacitorConfig } from '@capacitor/cli';
+
+const config: CapacitorConfig = {
+  appId: 'com.workride.mobility',
+  appName: 'Zyro',
+  webDir: 'dist',
+  server: {
+    androidScheme: 'https',
+    cleartext: false,
+  },
+  android: {
+    allowMixedContent: false,
+    captureInput: true,
+    webContentsDebuggingEnabled: false,
+  },
+  plugins: {
+    StatusBar: {
+      overlaysWebView: false,
+      style: 'DARK',
+      backgroundColor: '#0f172a',
+    },
+    SplashScreen: {
+      launchShowDuration: 1800,
+      launchAutoHide: true,
+      backgroundColor: '#0f172a',
+      androidSplashResourceName: 'splash',
+      androidScaleType: 'CENTER_CROP',
+      showSpinner: false,
+    },
+    App: {
+      // Handles native hardware back button and app lifecycle
+    },
+  },
+};
+
+export default config;

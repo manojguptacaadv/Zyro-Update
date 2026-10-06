@@ -1,0 +1,150 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profile",
+      "description": "User profile document storing separate individual fields per user registration",
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string",
+          "description": "Full legal name of the partner"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "description": "10-digit Indian phone number with +91 country code"
+        },
+        "emailAddress": {
+          "type": "string",
+          "description": "Contact email address"
+        },
+        "registrationType": {
+          "type": "string",
+          "description": "Selected registration type: Driver, Truck Owner, Driver & Truck Owner, Rent & Drive"
+        },
+        "experienceYears": {
+          "type": "string",
+          "description": "Commercial driving experience in years"
+        },
+        "licenceNumber": {
+          "type": "string",
+          "description": "Driving licence number"
+        },
+        "licenceExpiryDate": {
+          "type": "string",
+          "description": "Driving licence expiry date"
+        },
+        "licenceType": {
+          "type": "string",
+          "description": "Licence classification type"
+        },
+        "preferredLocation": {
+          "type": "string",
+          "description": "Preferred work or driving location"
+        },
+        "workHistory": {
+          "type": "string",
+          "description": "Driver work and delivery history"
+        },
+        "truckType": {
+          "type": "string",
+          "description": "Type of truck or commercial vehicle"
+        },
+        "truckBrandModel": {
+          "type": "string",
+          "description": "Truck brand and model specification"
+        },
+        "manufacturingDate": {
+          "type": "string",
+          "description": "Vehicle manufacturing date or year"
+        },
+        "registrationNumber": {
+          "type": "string",
+          "description": "Commercial vehicle registration number / plate"
+        },
+        "loadCapacity": {
+          "type": "string",
+          "description": "Vehicle tonnage / load carrying capacity"
+        },
+        "vehicleAvailability": {
+          "type": "string",
+          "description": "Vehicle work availability shifts"
+        },
+        "vehicleLocation": {
+          "type": "string",
+          "description": "Base parking / garage location of vehicle"
+        },
+        "aadhaarCardImage": {
+          "type": "string",
+          "description": "Base64 or Data URL of the uploaded Aadhaar Card document image in JPG format"
+        },
+        "licenceCardImage": {
+          "type": "string",
+          "description": "Base64 or Data URL of the uploaded Driving Licence document image in JPG format"
+        },
+        "vehicleRcImage": {
+          "type": "string",
+          "description": "Base64 or Data URL of the uploaded Vehicle RC document image in JPG format"
+        },
+        "drivingLicencePhotoUrl": {
+          "type": "string",
+          "description": "Firebase Cloud Storage download URL for Driving Licence photo (stored in users/{uid}/documents/drivingLicence/)"
+        },
+        "profilePhotoUrl": {
+          "type": "string",
+          "description": "Firebase Cloud Storage download URL for user profile photo (stored in users/{uid}/profile/)"
+        },
+        "truckRCPhotoUrl": {
+          "type": "string",
+          "description": "Firebase Cloud Storage download URL for Truck RC document photo (stored in users/{uid}/truckDocuments/)"
+        },
+        "vehiclePhotoUrl": {
+          "type": "string",
+          "description": "Firebase Cloud Storage download URL for vehicle photo (stored in users/{uid}/vehiclePhotos/)"
+        },
+        "aadhaarCardPhotoUrl": {
+          "type": "string",
+          "description": "Firebase Cloud Storage download URL for Aadhaar Card photo (stored in users/{uid}/documents/aadhaar/)"
+        },
+        "bankAccountHolderName": {
+          "type": "string",
+          "description": "Full legal name on bank account"
+        },
+        "bankName": {
+          "type": "string",
+          "description": "Name of the financial institution"
+        },
+        "bankAccountNumberMasked": {
+          "type": "string",
+          "description": "Masked account number displaying only last 4 digits"
+        },
+        "bankIfscCode": {
+          "type": "string",
+          "description": "11-character Indian Financial System Code"
+        },
+        "bankAccountUpdatedAt": {
+          "type": "string",
+          "description": "Timestamp when bank details were added or modified"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Document creation server timestamp"
+        }
+      },
+      "required": [
+        "fullName",
+        "phoneNumber",
+        "emailAddress",
+        "registrationType",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "users"
+      },
+      "description": "User profiles indexed by Firebase Authentication UID"
+    }
+  }
+}
